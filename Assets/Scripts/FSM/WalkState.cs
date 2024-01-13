@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace FSM
 {
-    public class WalkState : NpcStates
+    public class WalkState : PlayerStates
     {
-        public override void EnterState(NpcFSM fsm)
+        public override void EnterState(PlayerFSM fsm)
         {
             Debug.Log("entered walk");
         }
 
-        public override void UpdateState(NpcFSM fsm)
+        public override void UpdateState(PlayerFSM fsm)
         {
             if(fsm.executingNpcState == ExecutingNpcState.WALK)
             {
@@ -21,7 +21,7 @@ namespace FSM
                 ExitState(fsm);
         }
 
-        public override void ExitState(NpcFSM fsm)
+        public override void ExitState(PlayerFSM fsm)
         {
             Debug.Log("exited walk");
             if(fsm.executingNpcState == ExecutingNpcState.IDLE)
